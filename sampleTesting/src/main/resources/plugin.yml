@@ -1,0 +1,5 @@
+name: SampleTesting
+version: ${project.version}
+main: zen.cantaloupe.sampletesting.SampleTesting
+api-version: 1.16
+description: This is where all the demos we make are located

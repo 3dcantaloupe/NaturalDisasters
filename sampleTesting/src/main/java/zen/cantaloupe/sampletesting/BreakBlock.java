@@ -1,5 +1,4 @@
-package zen.cantaloupe.disaster;
-
+package zen.cantaloupe.sampletesting;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.event.EventHandler;
@@ -20,3 +19,4 @@ public class BreakBlock implements Listener {
         }
     }
 }
+
