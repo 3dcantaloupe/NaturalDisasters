@@ -1,1 +1,8 @@
-[]
+[
+  {
+    "uuid": "86fddb5a-bc3d-3426-903f-3a2b788283f3",
+    "name": "3dcantaloupe",
+    "level": 4,
+    "bypassesPlayerLimit": false
+  }
+]

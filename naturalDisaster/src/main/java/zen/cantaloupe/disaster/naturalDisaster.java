@@ -8,6 +8,7 @@ public final class naturalDisaster extends JavaPlugin {
     public void onEnable() {
         System.out.println("Hello World!");
 
+        getServer().getPluginManager().registerEvents(new BreakBlock(), this);  // if not in this class, use main
     }
 
     @Override
