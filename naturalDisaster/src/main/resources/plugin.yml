@@ -1,0 +1,6 @@
+name: naturalDisaster
+version: ${project.version}
+main: zen.cantaloupe.disaster.naturalDisaster
+api-version: 1.16
+authors: [ Zenzte, 3dcantaloupe ]
+description: This plugin will add natural disaster events to Minecraft
