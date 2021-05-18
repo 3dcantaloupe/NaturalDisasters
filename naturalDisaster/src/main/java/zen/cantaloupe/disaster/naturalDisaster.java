@@ -14,16 +14,10 @@ public final class naturalDisaster extends JavaPlugin {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-
- throws InterruptedException 
-    });
-        System.out.println("IT WORKSSSSS LES GOOOO"
-bolean t = true;
-        while ( t = tue){
-    @Ove    TimeUnit.SECONDr.sleep(3);
-            Sride
-        }
-    public void onDisable() {
-        // Plugin shutdown logic
     }
+    @Override
+        public void onDisable() {
+            // Plugin shutdown logic
+        }
+
 }
