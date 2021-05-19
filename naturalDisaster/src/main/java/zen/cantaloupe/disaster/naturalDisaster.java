@@ -10,7 +10,8 @@ public final class naturalDisaster extends JavaPlugin {
         System.out.println("Hello World!");
         getServer().getPluginManager().registerEvents(new AcidRain(), this);
         try {
-            AcidRain.canAcid();
+            AcidRain storm = new AcidRain();
+            storm.canAcid();
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

@@ -5,6 +5,12 @@
     },
     "done": true
   },
+  "minecraft:recipes/transportation/dark_oak_boat": {
+    "criteria": {
+      "in_water": "2021-05-18 13:05:42 -0700"
+    },
+    "done": true
+  },
   "minecraft:recipes/tools/diamond_pickaxe": {
     "criteria": {
       "has_diamond": "2021-05-13 09:17:42 -0700"
@@ -14,6 +20,12 @@
   "minecraft:recipes/tools/diamond_hoe": {
     "criteria": {
       "has_diamond": "2021-05-13 09:17:42 -0700"
+    },
+    "done": true
+  },
+  "minecraft:recipes/transportation/birch_boat": {
+    "criteria": {
+      "in_water": "2021-05-18 13:05:42 -0700"
     },
     "done": true
   },
@@ -47,6 +59,18 @@
     },
     "done": true
   },
+  "minecraft:recipes/transportation/acacia_boat": {
+    "criteria": {
+      "in_water": "2021-05-18 13:05:42 -0700"
+    },
+    "done": true
+  },
+  "minecraft:recipes/transportation/oak_boat": {
+    "criteria": {
+      "in_water": "2021-05-18 13:05:42 -0700"
+    },
+    "done": true
+  },
   "minecraft:recipes/combat/diamond_sword": {
     "criteria": {
       "has_diamond": "2021-05-13 09:17:42 -0700"
@@ -65,9 +89,9 @@
     },
     "done": true
   },
-  "minecraft:recipes/decorations/jukebox": {
+  "minecraft:recipes/transportation/jungle_boat": {
     "criteria": {
-      "has_diamond": "2021-05-13 09:17:42 -0700"
+      "in_water": "2021-05-18 13:05:42 -0700"
     },
     "done": true
   },
@@ -77,10 +101,24 @@
     },
     "done": true
   },
+  "minecraft:recipes/decorations/jukebox": {
+    "criteria": {
+      "has_diamond": "2021-05-13 09:17:42 -0700"
+    },
+    "done": true
+  },
+  "minecraft:recipes/transportation/spruce_boat": {
+    "criteria": {
+      "in_water": "2021-05-18 13:05:42 -0700"
+    },
+    "done": true
+  },
   "minecraft:adventure/adventuring_time": {
     "criteria": {
       "minecraft:cold_ocean": "2021-05-13 09:16:25 -0700",
       "minecraft:badlands": "2021-05-13 09:15:39 -0700",
+      "minecraft:beach": "2021-05-18 13:11:53 -0700",
+      "minecraft:river": "2021-05-18 13:12:12 -0700",
       "minecraft:wooded_badlands_plateau": "2021-05-13 09:16:03 -0700"
     },
     "done": false

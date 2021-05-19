@@ -21,16 +21,17 @@ public class AcidRain implements Listener{
        // world =  get the player somehow and do player.getWorld();
 
     }
-    public static void canAcid() throws InterruptedException {
-        int count = 0;
+    public void canAcid() throws InterruptedException {
+        int count = 19;
         System.out.println("IT WORKSSSSS LES GOOOO");
-        boolean t = true;
-        while ( t = true){
-            int randNumber = (int) (Math.random() * 20);
-            TimeUnit.SECONDS.sleep(3);
-            System.out.println(randNumber);
-            count = randNumber;
-        }
+        int t = 0;
+//        while ( t < 100){
+//            int randNumber = (int) (Math.random() * 20);
+//            TimeUnit.SECONDS.sleep(3);
+//            System.out.println(randNumber);
+//            count = randNumber;
+//            t++;
+//        }
 
         if (count > 18){
             startAcid();
@@ -38,7 +39,7 @@ public class AcidRain implements Listener{
         else{
         }
     }
-    public static void startAcid() {
+    public void startAcid() {
         int level = (int) (Math.random() * 5) + 1;
         int time = 0;
         if (level == 1){
@@ -61,6 +62,26 @@ public class AcidRain implements Listener{
             Bukkit.broadcastMessage("A very long Acid Rain storm is about to occur!!! (it lasts a day!)");
             time = 300;
         }
+        World world = Bukkit.getServer().getWorld("disaster");
+
+    for ( int i = 0; i < 22; i++) {
+        world.setStorm(true);
+//            try {
+//                TimeUnit.SECONDS.sleep(5);
+//            } catch (InterruptedException e) {
+//                e.printStackTrace();
+//            }
+        System.out.println("i is :" + i);
+        world.setStorm(false);
+    }
+//            try {
+//                TimeUnit.SECONDS.sleep(5);
+//            } catch (InterruptedException e) {
+//                e.printStackTrace();
+//            }
+
+//            System.out.println("i is :" + i);
+
         //world.setStorm(); get the world in the constructor
 
     }
