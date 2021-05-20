@@ -8,6 +8,8 @@ import org.bukkit.event.Listener;
 import java.util.concurrent.TimeUnit;
 import org.bukkit.World;
 //import org.bukkit.event.weather;
+import org.bukkit.scheduler.BukkitRunnable;
+import org.bukkit.scheduler.BukkitTask;
 
 public class AcidRain implements Listener{
     private naturalDisaster plugin;
@@ -44,28 +46,28 @@ public class AcidRain implements Listener{
         int time = 0;
         if (level == 1){
             Bukkit.broadcastMessage("A drizzle of Acid Rain is about to fall down upon ye terra");
-            time = 30;
+            time = 3000;
         }
         else if (level == 2){
             Bukkit.broadcastMessage("A bit of Acid Rain is about to fall");
-            time = 60;
+            time = 6000;
         }
         else if (level == 3){
             Bukkit.broadcastMessage("An Acid Rain storm is rolling in");
-            time = 120;
+            time = 12000;
         }
         else if (level == 4){
             Bukkit.broadcastMessage("A large amount of Acid Rain is about to rain down upon ye");
-            time = 200;
+            time = 18000;
         }
         else if (level == 5){
-            Bukkit.broadcastMessage("A hurrican of an Acid Rain storm is about to occur!!!");
-            time = 300;
+            Bukkit.broadcastMessage("A hurricane of an Acid Rain storm is about to occur!!!");
+            time = 24000;
         }
         world = Bukkit.getServer().getWorld("disaster");
 
 //    for ( int i = 0; i < 5; i++) {
-        world.setStorm(true);
+//        world.setStorm(true);
 //        try {
 //            TimeUnit.SECONDS.sleep(5);
 //        } catch (InterruptedException e) {
@@ -84,6 +86,13 @@ public class AcidRain implements Listener{
 
         //world.setStorm(); get the world in the constructor
 
+        world.setStorm(true);
+        Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(plugin, new Runnable() {
+            @Override
+            public void run() {
+                world.setStorm(false);
+            }
+        }, 600); //change 600 to time later
 
     }
 
