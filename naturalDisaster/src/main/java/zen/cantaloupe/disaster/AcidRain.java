@@ -9,6 +9,7 @@ import java.util.concurrent.TimeUnit;
 import org.bukkit.World;
 //import org.bukkit.event.weather;
 import org.bukkit.scheduler.BukkitRunnable;
+import org.bukkit.scheduler.BukkitScheduler;
 import org.bukkit.scheduler.BukkitTask;
 
 public class AcidRain implements Listener{
@@ -44,23 +45,19 @@ public class AcidRain implements Listener{
     public void startAcid() {
         int level = (int) (Math.random() * 5) + 1;
         int time = 0;
-        if (level == 1){
+        if (level == 1) {
             Bukkit.broadcastMessage("A drizzle of Acid Rain is about to fall down upon ye terra");
             time = 3000;
-        }
-        else if (level == 2){
+        } else if (level == 2) {
             Bukkit.broadcastMessage("A bit of Acid Rain is about to fall");
             time = 6000;
-        }
-        else if (level == 3){
+        } else if (level == 3) {
             Bukkit.broadcastMessage("An Acid Rain storm is rolling in");
             time = 12000;
-        }
-        else if (level == 4){
+        } else if (level == 4) {
             Bukkit.broadcastMessage("A large amount of Acid Rain is about to rain down upon ye");
             time = 18000;
-        }
-        else if (level == 5){
+        } else if (level == 5) {
             Bukkit.broadcastMessage("A hurricane of an Acid Rain storm is about to occur!!!");
             time = 24000;
         }
@@ -87,12 +84,22 @@ public class AcidRain implements Listener{
         //world.setStorm(); get the world in the constructor
 
         world.setStorm(true);
-        Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(plugin, new Runnable() {
+//        Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(plugin, new Runnable() {
+//            @Override
+//            public void run() {
+//                world.setStorm(false);s
+//            }
+//        }, 600); //change 600 to time later
+
+        System.out.println("HIIII");
+        BukkitScheduler scheduler = Bukkit.getServer().getScheduler();
+        scheduler.runTaskLater(plugin, new Runnable() {
             @Override
             public void run() {
                 world.setStorm(false);
             }
-        }, 600); //change 600 to time later
+        }, 100L);
+
 
     }
 
