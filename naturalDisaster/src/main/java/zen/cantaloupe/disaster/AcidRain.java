@@ -62,27 +62,28 @@ public class AcidRain implements Listener{
             Bukkit.broadcastMessage("A very long Acid Rain storm is about to occur!!! (it lasts a day!)");
             time = 300;
         }
-        World world = Bukkit.getServer().getWorld("disaster");
+        world = Bukkit.getServer().getWorld("disaster");
 
-    for ( int i = 0; i < 22; i++) {
+//    for ( int i = 0; i < 5; i++) {
         world.setStorm(true);
-//            try {
-//                TimeUnit.SECONDS.sleep(5);
-//            } catch (InterruptedException e) {
-//                e.printStackTrace();
-//            }
-        System.out.println("i is :" + i);
-        world.setStorm(false);
-    }
-//            try {
-//                TimeUnit.SECONDS.sleep(5);
-//            } catch (InterruptedException e) {
-//                e.printStackTrace();
-//            }
+//        try {
+//            TimeUnit.SECONDS.sleep(5);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
+//        System.out.println("i is :" + i);
+//        world.setStorm(false);
 
-//            System.out.println("i is :" + i);
+//        try {
+//            TimeUnit.SECONDS.sleep(5);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
+//
+//        System.out.println("i is :" + i);
 
         //world.setStorm(); get the world in the constructor
+
 
     }
 
