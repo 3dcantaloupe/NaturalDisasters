@@ -43,23 +43,23 @@ public class AcidRain implements Listener{
         int level = (int) (Math.random() * 5) + 1;
         int time = 0;
         if (level == 1){
-            Bukkit.broadcastMessage("A very timid Acid Rain is about to fall down upon ye terra");
+            Bukkit.broadcastMessage("A drizzle of Acid Rain is about to fall down upon ye terra");
             time = 30;
         }
         else if (level == 2){
-            Bukkit.broadcastMessage("Some little amount of Acid Rain is about to fall");
+            Bukkit.broadcastMessage("A bit of Acid Rain is about to fall");
             time = 60;
         }
         else if (level == 3){
-            Bukkit.broadcastMessage("A moderately sized Acid Rain storm is about to occur");
+            Bukkit.broadcastMessage("An Acid Rain storm is rolling in");
             time = 120;
         }
         else if (level == 4){
-            Bukkit.broadcastMessage("A decently large amount of Acid Rain is about to rain down upon ye");
+            Bukkit.broadcastMessage("A large amount of Acid Rain is about to rain down upon ye");
             time = 200;
         }
         else if (level == 5){
-            Bukkit.broadcastMessage("A very long Acid Rain storm is about to occur!!! (it lasts a day!)");
+            Bukkit.broadcastMessage("A hurrican of an Acid Rain storm is about to occur!!!");
             time = 300;
         }
         world = Bukkit.getServer().getWorld("disaster");
