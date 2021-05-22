@@ -16,26 +16,29 @@ public class AcidRain implements Listener{
     private naturalDisaster plugin;
     private int time;
     private AcidRain obj;
-    private World world;
+    private static World world;
+    private static int count;
 
-    public AcidRain() {
+    public AcidRain(naturalDisaster plugin) {
         this.plugin = plugin;
         this.obj = this;
        // world =  get the player somehow and do player.getWorld();
 
     }
-    public void canAcid() throws InterruptedException {
-        int count = 19;
-        System.out.println("IT WORKSSSSS LES GOOOO");
-        int t = 0;
-//        while ( t < 100){
-//            int randNumber = (int) (Math.random() * 20);
-//            TimeUnit.SECONDS.sleep(3);
-//            System.out.println(randNumber);
-//            count = randNumber;
-//            t++;
-//        }
 
+
+
+    public static int getCount() {
+        return count;
+    }
+
+    public static void setCount(int c){
+        count = c;
+    }
+
+    public void canAcid() throws InterruptedException {
+        count = 19;
+        System.out.println("IT WORKSSSSS LES GOOOO");
         if (count > 18){
             startAcid();
         }
@@ -46,61 +49,36 @@ public class AcidRain implements Listener{
         int level = (int) (Math.random() * 5) + 1;
         int time = 0;
         if (level == 1) {
-            Bukkit.broadcastMessage("A drizzle of Acid Rain is about to fall down upon ye terra");
+            plugin.getServer().broadcastMessage("A drizzle of Acid Rain is about to fall down upon ye terra");
             time = 3000;
+            System.out.println(level);
         } else if (level == 2) {
-            Bukkit.broadcastMessage("A bit of Acid Rain is about to fall");
+            plugin.getServer().broadcastMessage("A bit of Acid Rain is about to fall");
             time = 6000;
+            System.out.println(level);
         } else if (level == 3) {
-            Bukkit.broadcastMessage("An Acid Rain storm is rolling in");
+            plugin.getServer().broadcastMessage("An Acid Rain storm is rolling in");
             time = 12000;
+            System.out.println(level);
         } else if (level == 4) {
-            Bukkit.broadcastMessage("A large amount of Acid Rain is about to rain down upon ye");
+            plugin.getServer().broadcastMessage("A large amount of Acid Rain is about to rain down upon ye");
             time = 18000;
+            System.out.println(level);
         } else if (level == 5) {
-            Bukkit.broadcastMessage("A hurricane of an Acid Rain storm is about to occur!!!");
+            plugin.getServer().broadcastMessage("A hurricane of an Acid Rain storm is about to occur!!!");
             time = 24000;
+            System.out.println(level);
         }
         world = Bukkit.getServer().getWorld("disaster");
-
-//    for ( int i = 0; i < 5; i++) {
-//        world.setStorm(true);
-//        try {
-//            TimeUnit.SECONDS.sleep(5);
-//        } catch (InterruptedException e) {
-//            e.printStackTrace();
-//        }
-//        System.out.println("i is :" + i);
-//        world.setStorm(false);
-
-//        try {
-//            TimeUnit.SECONDS.sleep(5);
-//        } catch (InterruptedException e) {
-//            e.printStackTrace();
-//        }
-//
-//        System.out.println("i is :" + i);
-
-        //world.setStorm(); get the world in the constructor
-
         world.setStorm(true);
-//        Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(plugin, new Runnable() {
-//            @Override
-//            public void run() {
-//                world.setStorm(false);s
-//            }
-//        }, 600); //change 600 to time later
-
-        System.out.println("HIIII");
-        BukkitScheduler scheduler = Bukkit.getServer().getScheduler();
-        scheduler.runTaskLater(plugin, new Runnable() {
-            @Override
-            public void run() {
-                world.setStorm(false);
-            }
-        }, 100L);
+        BukkitTask task = (BukkitTask) new ChanceCount(plugin).runTaskLater(plugin, time);
 
 
+
+
+    }
+    public static World getWorld() {
+        return world;
     }
 
 

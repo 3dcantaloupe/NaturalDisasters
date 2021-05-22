@@ -1,4 +1,10 @@
 {
+  "minecraft:recipes/redstone/dispenser": {
+    "criteria": {
+      "has_bow": "2021-05-21 18:45:06 -0700"
+    },
+    "done": true
+  },
   "minecraft:recipes/building_blocks/diamond_block": {
     "criteria": {
       "has_diamond": "2021-05-13 09:17:42 -0700"
@@ -23,6 +29,53 @@
     },
     "done": true
   },
+  "minecraft:adventure/kill_a_mob": {
+    "criteria": {
+      "minecraft:skeleton": "2021-05-21 18:45:05 -0700"
+    },
+    "done": true
+  },
+  "minecraft:recipes/tools/diamond_shovel": {
+    "criteria": {
+      "has_diamond": "2021-05-13 09:17:42 -0700"
+    },
+    "done": true
+  },
+  "minecraft:adventure/kill_all_mobs": {
+    "criteria": {
+      "minecraft:skeleton": "2021-05-21 18:45:05 -0700"
+    },
+    "done": false
+  },
+  "minecraft:recipes/combat/diamond_chestplate": {
+    "criteria": {
+      "has_diamond": "2021-05-13 09:17:42 -0700"
+    },
+    "done": true
+  },
+  "minecraft:recipes/tools/diamond_axe": {
+    "criteria": {
+      "has_diamond": "2021-05-13 09:17:42 -0700"
+    },
+    "done": true
+  },
+  "minecraft:adventure/adventuring_time": {
+    "criteria": {
+      "minecraft:cold_ocean": "2021-05-13 09:16:25 -0700",
+      "minecraft:badlands": "2021-05-13 09:15:39 -0700",
+      "minecraft:beach": "2021-05-18 13:11:53 -0700",
+      "minecraft:river": "2021-05-18 13:12:12 -0700",
+      "minecraft:wooded_badlands_plateau": "2021-05-13 09:16:03 -0700",
+      "minecraft:plains": "2021-05-21 18:42:08 -0700"
+    },
+    "done": false
+  },
+  "minecraft:recipes/combat/diamond_leggings": {
+    "criteria": {
+      "has_diamond": "2021-05-13 09:17:42 -0700"
+    },
+    "done": true
+  },
   "minecraft:recipes/transportation/birch_boat": {
     "criteria": {
       "in_water": "2021-05-18 13:05:42 -0700"
@@ -36,12 +89,6 @@
     "done": true
   },
   "minecraft:recipes/combat/diamond_boots": {
-    "criteria": {
-      "has_diamond": "2021-05-13 09:17:42 -0700"
-    },
-    "done": true
-  },
-  "minecraft:recipes/tools/diamond_shovel": {
     "criteria": {
       "has_diamond": "2021-05-13 09:17:42 -0700"
     },
@@ -77,15 +124,9 @@
     },
     "done": true
   },
-  "minecraft:recipes/combat/diamond_chestplate": {
+  "minecraft:adventure/root": {
     "criteria": {
-      "has_diamond": "2021-05-13 09:17:42 -0700"
-    },
-    "done": true
-  },
-  "minecraft:recipes/tools/diamond_axe": {
-    "criteria": {
-      "has_diamond": "2021-05-13 09:17:42 -0700"
+      "killed_something": "2021-05-21 18:44:15 -0700"
     },
     "done": true
   },
@@ -110,22 +151,6 @@
   "minecraft:recipes/transportation/spruce_boat": {
     "criteria": {
       "in_water": "2021-05-18 13:05:42 -0700"
-    },
-    "done": true
-  },
-  "minecraft:adventure/adventuring_time": {
-    "criteria": {
-      "minecraft:cold_ocean": "2021-05-13 09:16:25 -0700",
-      "minecraft:badlands": "2021-05-13 09:15:39 -0700",
-      "minecraft:beach": "2021-05-18 13:11:53 -0700",
-      "minecraft:river": "2021-05-18 13:12:12 -0700",
-      "minecraft:wooded_badlands_plateau": "2021-05-13 09:16:03 -0700"
-    },
-    "done": false
-  },
-  "minecraft:recipes/combat/diamond_leggings": {
-    "criteria": {
-      "has_diamond": "2021-05-13 09:17:42 -0700"
     },
     "done": true
   },
