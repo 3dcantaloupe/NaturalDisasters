@@ -8,25 +8,26 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
 import java.util.concurrent.TimeUnit;
 import org.bukkit.World;
+import org.bukkit.ChatColor;
 //import org.bukkit.event.weather;
 import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.scheduler.BukkitScheduler;
 import org.bukkit.scheduler.BukkitTask;
 
 public class AcidRain implements Listener{
-    private naturalDisaster plugin;
+    private static naturalDisaster plugin;
     private int time;
     private AcidRain obj;
     private static World world;
     private static int count;
-    private static boolean hasStorm;
+
   
     private static BukkitTask task2;
 
     public AcidRain(naturalDisaster plugin) {
         this.plugin = plugin;
         this.obj = this;
-        hasStorm = true;
+        
        // world =  get the player somehow and do player.getWorld();
 
     }
@@ -35,13 +36,6 @@ public class AcidRain implements Listener{
     }
     public static BukkitTask getTask2(){
         return task2;
-    }
-    public static void setHasStorm(boolean s){
-        hasStorm = s;
-    }
-    
-    public static boolean getHasStorm(){
-        return hasStorm;
     }
 
 
@@ -55,8 +49,8 @@ public class AcidRain implements Listener{
     }
 
     public void canAcid() throws InterruptedException {
-        count = 19;
-        System.out.println("IT WORKSSSSS LES GOOOO");
+        count =  (int) (Math.random() * 20) + 1;
+
         if (count > 18){
             startAcid();
         }
@@ -70,37 +64,37 @@ public class AcidRain implements Listener{
         if (level == 1) {
             
             for (int i = 0; i < players.length; i++){
-                players[ i ].sendMessage("A drizzle of Acid Rain is about to fall down upon ye terra");
+                players[ i ].sendMessage(ChatColor.GREEN + "A drizzle of Acid Rain is about to fall down upon ye terra");
             }
-            Bukkit.broadcastMessage("A drizzle of Acid Rain is about to fall down upon ye terra");
+         
             time = 3000;
             System.out.println(level);
         } else if (level == 2) {
             for (int i = 0; i < players.length; i++){
-                players[ i ].sendMessage("A bit of Acid Rain is about to fall");
+                players[ i ].sendMessage(ChatColor.GREEN + "A bit of Acid Rain is about to fall");
             }
-            Bukkit.broadcastMessage("A bit of Acid Rain is about to fall");
+          
             time = 6000;
             System.out.println(level);
         } else if (level == 3) {
             for (int i = 0; i < players.length; i++){
-                players[ i ].sendMessage("An Acid Rain storm is rolling in");
+                players[ i ].sendMessage(ChatColor.GREEN + "An Acid Rain storm is rolling in");
             }
-            Bukkit.broadcastMessage("An Acid Rain storm is rolling in");
+          
             time = 12000;
             System.out.println(level);
         } else if (level == 4) {
             for (int i = 0; i < players.length; i++){
-                players[ i ].sendMessage("A large amount of Acid Rain is about to rain down upon ye");
+                players[ i ].sendMessage(ChatColor.GREEN + "A large amount of Acid Rain is about to rain down upon ye");
             }
-            Bukkit.broadcastMessage("A large amount of Acid Rain is about to rain down upon ye");
+
             time = 18000;
             System.out.println(level);
         } else if (level == 5) {
             for (int i = 0; i < players.length; i++){
-                players[ i ].sendMessage("A hurricane of an Acid Rain storm is about to occur!!!");
+                players[ i ].sendMessage(ChatColor.GREEN + "A hurricane of an Acid Rain storm is about to occur!!!");
             }
-            Bukkit.broadcastMessage("A hurricane of an Acid Rain storm is about to occur!!!");
+           
             time = 24000;
             System.out.println(level);
         }
@@ -123,7 +117,20 @@ public class AcidRain implements Listener{
         return world;
     }
 
+    public static void startStormCommand(int sec){
+        Player[] players = Bukkit.getServer().getOnlinePlayers().toArray(new Player[0]);
+        for (int i = 0; i < players.length; i++){
+            players[ i ].sendMessage(ChatColor.GREEN + "An Acid Rain storm has been summoned for " + sec + " seconds");
+        }
+        world = Bukkit.getServer().getWorld("disaster");
+        world.setStorm(true);
+        task2 = (BukkitTask) new AcidDamage(plugin).runTaskTimer(plugin, 40, 40);
+        BukkitTask task = (BukkitTask) new ChanceCount(plugin).runTaskLater(plugin, sec*20);
+    }
 
+    public static void endStormCommand(){
+        BukkitTask task = (BukkitTask) new ChanceCount(plugin).runTaskLater(plugin, 0);
+    }
 
 
 }

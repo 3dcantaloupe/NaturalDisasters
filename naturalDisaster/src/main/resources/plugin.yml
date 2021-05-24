@@ -3,4 +3,11 @@ version: ${project.version}
 main: zen.cantaloupe.disaster.naturalDisaster
 api-version: 1.16
 authors: [ Zenzte, 3dcantaloupe ]
-description: This plugin will add natural disaster events to Minecraft
+description: This plugin will add natural disaster event to Minecraft
+commands:
+  startacid:
+    description: starts a storm based on the amount of seconds given
+    usage: /<command>
+  endacid:
+    description: ends a running storm
+    usage: /<command>

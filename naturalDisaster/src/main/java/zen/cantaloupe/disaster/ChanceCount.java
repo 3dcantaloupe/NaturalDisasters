@@ -25,9 +25,7 @@ public class ChanceCount extends BukkitRunnable{
     public void run() {
         Bukkit.broadcastMessage("Storm has passed");
 
-        System.out.println("time worksss");
         AcidRain.getWorld().setStorm(false);
-        AcidRain.setHasStorm(false);
         
         AcidRain.getTask2().cancel();
         
